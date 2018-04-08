@@ -1,5 +1,5 @@
 <%= form_for(task) do |f| %>
-<% if message.errors.any? %>
+  <% if task.errors.any? %>
     <div id="error_explanation">
       <ul>
         <% task.errors.full_tasks.each do |task| %>
@@ -8,7 +8,8 @@
       </ul>
     </div>
   <% end %>
-<%= f.label :status, 'ステイタス' %>
+
+  <%= f.label :status, 'タイトル' %>
   <%= f.text_field :status %>
 
   <%= f.label :content, 'メッセージ' %>

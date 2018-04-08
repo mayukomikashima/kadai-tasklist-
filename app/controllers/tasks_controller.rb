@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
     def index
      @tasks = Task.all
@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   end
 
   def create
-     @task = Task.new(task_params)
+   @task= Task.new(task_params)
 
     if @task.save
       flash[:success] = 'Task が正常に投稿されました'
